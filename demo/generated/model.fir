@@ -1,0 +1,46 @@
+;buildInfoPackage: chisel3, version: 3.1.2, scalaVersion: 2.11.12, sbtVersion: 1.1.1, builtAtString: 2018-07-25 16:52:17.431, builtAtMillis: 1532537537431
+circuit model : 
+  module model : 
+    input clock : Clock
+    input reset : UInt<1>
+    output io : {out : UInt<5>}
+    
+    wire temp_vec : UInt<1>[7] @[model.scala 11:21]
+    temp_vec[0] <= UInt<1>("h00") @[model.scala 11:21]
+    temp_vec[1] <= UInt<1>("h00") @[model.scala 11:21]
+    temp_vec[2] <= UInt<1>("h00") @[model.scala 11:21]
+    temp_vec[3] <= UInt<1>("h00") @[model.scala 11:21]
+    temp_vec[4] <= UInt<1>("h00") @[model.scala 11:21]
+    temp_vec[5] <= UInt<1>("h00") @[model.scala 11:21]
+    temp_vec[6] <= UInt<1>("h00") @[model.scala 11:21]
+    node _T_27 = geq(UInt<1>("h00"), UInt<2>("h03")) @[PriorityEncoder.scala 15:72]
+    node _T_28 = and(temp_vec[0], _T_27) @[PriorityEncoder.scala 15:65]
+    node _T_30 = geq(UInt<1>("h01"), UInt<2>("h03")) @[PriorityEncoder.scala 15:72]
+    node _T_31 = and(temp_vec[1], _T_30) @[PriorityEncoder.scala 15:65]
+    node _T_33 = geq(UInt<2>("h02"), UInt<2>("h03")) @[PriorityEncoder.scala 15:72]
+    node _T_34 = and(temp_vec[2], _T_33) @[PriorityEncoder.scala 15:65]
+    node _T_36 = geq(UInt<2>("h03"), UInt<2>("h03")) @[PriorityEncoder.scala 15:72]
+    node _T_37 = and(temp_vec[3], _T_36) @[PriorityEncoder.scala 15:65]
+    node _T_39 = geq(UInt<3>("h04"), UInt<2>("h03")) @[PriorityEncoder.scala 15:72]
+    node _T_40 = and(temp_vec[4], _T_39) @[PriorityEncoder.scala 15:65]
+    node _T_42 = geq(UInt<3>("h05"), UInt<2>("h03")) @[PriorityEncoder.scala 15:72]
+    node _T_43 = and(temp_vec[5], _T_42) @[PriorityEncoder.scala 15:65]
+    node _T_45 = geq(UInt<3>("h06"), UInt<2>("h03")) @[PriorityEncoder.scala 15:72]
+    node _T_46 = and(temp_vec[6], _T_45) @[PriorityEncoder.scala 15:65]
+    node _T_63 = mux(temp_vec[5], UInt<4>("h0d"), UInt<4>("h0e")) @[Mux.scala 31:69]
+    node _T_64 = mux(temp_vec[4], UInt<4>("h0c"), _T_63) @[Mux.scala 31:69]
+    node _T_65 = mux(temp_vec[3], UInt<4>("h0b"), _T_64) @[Mux.scala 31:69]
+    node _T_66 = mux(temp_vec[2], UInt<4>("h0a"), _T_65) @[Mux.scala 31:69]
+    node _T_67 = mux(temp_vec[1], UInt<4>("h09"), _T_66) @[Mux.scala 31:69]
+    node _T_68 = mux(temp_vec[0], UInt<4>("h08"), _T_67) @[Mux.scala 31:69]
+    node _T_69 = mux(UInt<1>("h00"), UInt<3>("h07"), _T_68) @[Mux.scala 31:69]
+    node _T_70 = mux(_T_46, UInt<3>("h06"), _T_69) @[Mux.scala 31:69]
+    node _T_71 = mux(_T_43, UInt<3>("h05"), _T_70) @[Mux.scala 31:69]
+    node _T_72 = mux(_T_40, UInt<3>("h04"), _T_71) @[Mux.scala 31:69]
+    node _T_73 = mux(_T_37, UInt<2>("h03"), _T_72) @[Mux.scala 31:69]
+    node _T_74 = mux(_T_34, UInt<2>("h02"), _T_73) @[Mux.scala 31:69]
+    node _T_75 = mux(_T_31, UInt<1>("h01"), _T_74) @[Mux.scala 31:69]
+    node _T_76 = mux(_T_28, UInt<1>("h00"), _T_75) @[Mux.scala 31:69]
+    node _T_77 = bits(_T_76, 2, 0) @[PriorityEncoder.scala 17:8]
+    io.out <= _T_77 @[model.scala 13:10]
+    
